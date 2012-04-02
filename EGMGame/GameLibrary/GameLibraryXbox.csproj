@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectGuid>{4EACF4AC-2ECC-45F8-B9F6-26D20C374EB5}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Xbox 360</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EGMGame</RootNamespace>
+    <AssemblyName>GameLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <XnaPlatform>Xbox 360</XnaPlatform>
+    <XnaCrossPlatformGroupID>d2c72b5e-02b3-4b25-9e5c-033b2b610b5b</XnaCrossPlatformGroupID>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <XnaUpgrade>
+    </XnaUpgrade>
+    <XnaOutputType>Library</XnaOutputType>
+    <XnaProfile>HiDef</XnaProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Xbox 360' ">
+    <OutputPath>bin\Xbox 360\Debug</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG;XBOX;XBOX360;XNA;VISUAL</DefineConstants>
+    <XnaCompressContent>true</XnaCompressContent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Xbox 360' ">
+    <OutputPath>bin\Xbox 360\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;XBOX;XBOX360</DefineConstants>
+    <XnaCompressContent>true</XnaCompressContent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Engine\Core\Physics\Partial\" />
+    <Folder Include="Processors\Menu\Events\Components\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Battle.cs" />
+    <Compile Include="Components\Camera.cs" />
+    <Compile Include="Components\Content.cs" />
+    <Compile Include="Components\Error.cs" />
+    <Compile Include="Components\InputState.cs" />
+    <Compile Include="Components\DrawableComponent.cs" />
+    <Compile Include="Components\SafeArea.cs" />
+    <Compile Include="Engine\Core\Interfaces\IBattler.cs" />
+    <Compile Include="Engine\Core\Interfaces\IMenu.cs" />
+    <Compile Include="Engine\Core\Library\CollisionData.cs" />
+    <Compile Include="Engine\Core\Library\ParticleSettings.cs" />
+    <Compile Include="Engine\Core\Library\ParticleVertex.cs" />
+    <Compile Include="Engine\Core\Library\PhysicsSettings.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\Collision.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\Distance.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\DynamicTree.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\DynamicTreeBroadPhase.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\IBroadPhase.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\QuadTree.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\QuadTreeBroadPhase.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\Shapes\CircleShape.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\Shapes\EdgeShape.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\Shapes\LoopShape.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\Shapes\PolygonShape.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\Shapes\Shape.cs" />
+    <Compile Include="Engine\Core\Physics\Collision\TimeOfImpact.cs" />
+    <Compile Include="Engine\Core\Physics\Common\ConvexHull\ChainHull.cs" />
+    <Compile Include="Engine\Core\Physics\Common\ConvexHull\GiftWrap.cs" />
+    <Compile Include="Engine\Core\Physics\Common\ConvexHull\Melkman.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\BayazitDecomposer.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDTDecomposer.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Delaunay\DelaunayTriangle.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Delaunay\Sweep\AdvancingFront.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Delaunay\Sweep\AdvancingFrontNode.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Delaunay\Sweep\DTSweep.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Delaunay\Sweep\DTSweepConstraint.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Delaunay\Sweep\DTSweepContext.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Delaunay\Sweep\DTSweepPointComparator.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Delaunay\Sweep\PointOnEdgeException.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\ITriangulatable.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Orientation.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Polygon\Polygon.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Polygon\PolygonPoint.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Polygon\PolygonSet.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Sets\ConstrainedPointSet.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Sets\PointSet.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\TriangulationConstraint.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\TriangulationContext.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\TriangulationMode.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\TriangulationPoint.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\TriangulationUtil.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Util\FixedArray3.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Util\FixedBitArray3.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Util\PointGenerator.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\CDT\Util\PolygonGenerator.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\EarclipDecomposer.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\FlipcodeDecomposer.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Decomposition\SeidelDecomposer.cs" />
+    <Compile Include="Engine\Core\Physics\Common\FixedArray.cs" />
+    <Compile Include="Engine\Core\Physics\Common\HashSet.cs" />
+    <Compile Include="Engine\Core\Physics\Common\LineTools.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Math.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Path.cs" />
+    <Compile Include="Engine\Core\Physics\Common\PathManager.cs" />
+    <Compile Include="Engine\Core\Physics\Common\PhysicsLogic\Explosion.cs" />
+    <Compile Include="Engine\Core\Physics\Common\PhysicsLogic\PhysicsLogic.cs" />
+    <Compile Include="Engine\Core\Physics\Common\PolygonManipulation\CuttingTools.cs" />
+    <Compile Include="Engine\Core\Physics\Common\PolygonManipulation\SimplifyTools.cs" />
+    <Compile Include="Engine\Core\Physics\Common\PolygonManipulation\YuPengClipper.cs" />
+    <Compile Include="Engine\Core\Physics\Common\PolygonTools.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Serialization.cs" />
+    <Compile Include="Engine\Core\Physics\Common\TextureTools\MarchingSquares.cs" />
+    <Compile Include="Engine\Core\Physics\Common\TextureTools\MSTerrain.cs" />
+    <Compile Include="Engine\Core\Physics\Common\TextureTools\TextureConverter.cs" />
+    <Compile Include="Engine\Core\Physics\Common\Vertices.cs" />
+    <Compile Include="Engine\Core\Physics\Controllers\AbstractForceController.cs" />
+    <Compile Include="Engine\Core\Physics\Controllers\BuoyancyController.cs" />
+    <Compile Include="Engine\Core\Physics\Controllers\Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Controllers\EventGravityController.cs" />
+    <Compile Include="Engine\Core\Physics\Controllers\GravityController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Controllers\PointGravityController.cs" />
+    <Compile Include="Engine\Core\Physics\Controllers\SimpleWindForce.cs" />
+    <Compile Include="Engine\Core\Physics\Controllers\VelocityLimitController.cs" />
+    <Compile Include="Engine\Core\Physics\ConvertUnits.cs" />
+    <Compile Include="Engine\Core\Physics\DebugView.cs" />
+    <Compile Include="Engine\Core\Physics\DebugViewXNA.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Body.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Dynamics\BreakableBody.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\ContactManager.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Contacts\Contact.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Contacts\ContactSolver.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Fixture.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Island.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\AngleJoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\DistanceJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\FixedAngleJoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\FixedDistanceJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\FixedFrictionJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\FixedLineJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\FixedMouseJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\FixedPrismaticJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\FixedRevoluteJoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\FrictionJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\GearJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\Joint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\LineJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\PrismaticJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\PulleyJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\RevoluteJoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\RopeJoint.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\SliderJoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Dynamics\Joints\WeldJoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Dynamics\TimeStep.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\World.cs" />
+    <Compile Include="Engine\Core\Physics\Dynamics\WorldCallbacks.cs" />
+    <Compile Include="Engine\Core\Physics\Factories\BodyFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Factories\FixtureFactory.cs" />
+    <Compile Include="Engine\Core\Physics\Factories\JointFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\Factories\LinkFactory.cs" />
+    <Compile Include="Engine\Core\Physics\Pool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\Core\Physics\PrimitiveBatch.cs" />
+    <Compile Include="Engine\Core\Physics\Settings.cs" />
+    <Compile Include="Framework\Global.cs" />
+    <Compile Include="Framework\Items\Animation.cs" />
+    <Compile Include="Framework\Menu\Button.cs" />
+    <Compile Include="Framework\Menu\List.cs" />
+    <Compile Include="Framework\Menu\DynamicBar.cs" />
+    <Compile Include="Framework\Menu\Textbox.cs" />
+    <Compile Include="Framework\Menu\Option.cs" />
+    <Compile Include="Framework\Menu\MenuItem.cs" />
+    <Compile Include="Framework\Menu\MenuFramework.cs" />
+    <Compile Include="Processors\Battler\StateProcessor.cs" />
+    <Compile Include="Processors\Effects and Media\ShaderProcessor.cs" />
+    <Compile Include="Processors\Effects and Media\TimerProcessor.cs" />
+    <Compile Include="Processors\Effects and Media\EmitterProcessor.cs" />
+    <Compile Include="Processors\Effects and Media\WeatherProcessor.cs" />
+    <Compile Include="Components\Marshal.cs" />
+    <Compile Include="Components\Pathfinder.cs" />
+    <Compile Include="Processors\Effects and Media\PlayListProcessor.cs" />
+    <Compile Include="Components\CustomSerializer.cs" />
+    <Compile Include="Components\Managers\StorageManager.cs" />
+    <Compile Include="Components\Managers\ThreadManager.cs" />
+    <Compile Include="Engine\Extensions\ColorRGBA.cs" />
+    <Compile Include="Engine\Extensions\ExMath.cs" />
+    <Compile Include="Engine\Extensions\Extensions.cs" />
+    <Compile Include="Components\GraphicsHelper.cs" />
+    <Compile Include="Engine\Extensions\RectangleF.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Engine\Core\Library\AnimationData.cs" />
+    <Compile Include="Engine\Core\Library\AudioData.cs" />
+    <Compile Include="Engine\Core\Library\ComboData.cs" />
+    <Compile Include="Engine\Core\Library\Database.cs" />
+    <Compile Include="Engine\Core\Library\EnemyData.cs" />
+    <Compile Include="Engine\Core\Library\EquipmentData.cs" />
+    <Compile Include="Engine\Core\Library\EventData.cs" />
+    <Compile Include="Engine\Core\Library\EventProgramData.cs" />
+    <Compile Include="Engine\Core\Library\FontData.cs" />
+    <Compile Include="Engine\Core\Library\GlobalEventData.cs" />
+    <Compile Include="Engine\Core\Library\HeroData.cs" />
+    <Compile Include="Engine\Core\Library\Interfaces\IEvent.cs" />
+    <Compile Include="Engine\Core\Library\Interfaces\IGameData.cs" />
+    <Compile Include="Engine\Core\Library\ItemData.cs" />
+    <Compile Include="Engine\Core\Library\ListData.cs" />
+    <Compile Include="Engine\Core\Library\MapData.cs" />
+    <Compile Include="Engine\Core\Library\MapInfo.cs" />
+    <Compile Include="Engine\Core\Library\MaterialData.cs" />
+    <Compile Include="Engine\Core\Library\MenuData.cs" />
+    <Compile Include="Engine\Core\Library\MenuPartsData.cs" />
+    <Compile Include="Engine\Core\Library\ParticleRandomizer.cs" />
+    <Compile Include="Engine\Core\Library\PlayerData.cs" />
+    <Compile Include="Engine\Core\Library\ProjectData\GameData.cs" />
+    <Compile Include="Engine\Core\Library\ProjectData\Project.cs" />
+    <Compile Include="Engine\Core\Library\ProjectileData.cs" />
+    <Compile Include="Engine\Core\Library\SkillData.cs" />
+    <Compile Include="Engine\Core\Library\SkinData.cs" />
+    <Compile Include="Engine\Core\Library\StateData.cs" />
+    <Compile Include="Engine\Core\Library\StringData.cs" />
+    <Compile Include="Engine\Core\Library\SwitchData.cs" />
+    <Compile Include="Engine\Core\Library\TextData.cs" />
+    <Compile Include="Engine\Core\Library\TilesetData.cs" />
+    <Compile Include="Engine\Core\Library\VariableData.cs" />
+    <Compile Include="Processors\Events\Components\AnimationProcessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processors\Events\Components\LaserProcessor.cs" />
+    <Compile Include="Processors\Events\Components\MovementProcessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processors\Events\Components\Projectile.cs" />
+    <Compile Include="Processors\Events\Components\ProjectileProcessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processors\Events\Event Processor\BattleProcessor.cs" />
+    <Compile Include="Processors\Events\Event Processor\EventProcessor.cs" />
+    <Compile Include="Processors\Events\Event Processor\PlayerProcessor.cs" />
+    <Compile Include="Processors\Events\GlobalEventProcessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processors\Events\Interpreter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Processors\Menu\MenuProcessor.cs" />
+    <Compile Include="Processors\Menu\MenuPartProcessor.cs" />
+    <Compile Include="Engine\ScreenManager\Main Screens\GameplayScreen.cs" />
+    <Compile Include="Engine\ScreenManager\Main Screens\MenuScreen.cs" />
+    <Compile Include="Components\Managers\AudioManager.cs" />
+    <Compile Include="Processors\Effects and Media\AudioProcessor.cs" />
+    <Compile Include="Processors\Effects and Media\EffectProcessor.cs" />
+    <Compile Include="Processors\Battler\EnemyProcessor.cs" />
+    <Compile Include="Processors\Battler\HeroProcessor.cs" />
+    <Compile Include="Processors\MapProcessor.cs" />
+    <Compile Include="Processors\Effects and Media\ParticleSystemProcessor.cs" />
+    <Compile Include="Processors\Battler\PartyProcessor.cs" />
+    <Compile Include="Processors\Effects and Media\PictureProcessor.cs" />
+    <Compile Include="Processors\Effects and Media\VideoProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Engine\ScreenManager\GameScreen.cs" />
+    <Compile Include="Engine\ScreenManager\ScreenManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NestedContentProject Include="Content\Content.contentproj">
+      <Project>d13cf6de-7179-4ebe-847c-e8151c8f16f9</Project>
+      <Visible>False</Visible>
+    </NestedContentProject>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Xna.Framework.3.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft XNA Framework Redistributable 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Xna.Framework.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft XNA Framework Redistributable 4.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Avatar">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.GamerServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Net">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Storage">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Video">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Xact">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
