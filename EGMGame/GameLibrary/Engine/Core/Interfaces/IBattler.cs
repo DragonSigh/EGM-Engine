@@ -1,5 +1,5 @@
 ﻿//* Copyright (c) 2010, Virtual Impact Studios LLC www.expressgamemaker.com
-//* All rights reserved.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

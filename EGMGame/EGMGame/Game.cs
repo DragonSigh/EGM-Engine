@@ -1,5 +1,5 @@
 //* Copyright (c) 2010, Virtual Impact Studios LLC www.expressgamemaker.com
-//* All rights reserved.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +25,7 @@ namespace EGMGame
     {
 #if VISUAL && WINDOWS
         // <YOU MUST CHANGE PATHS>
-        string BaseProjectPath = @"C:\Users\Muhammet\Documents\EGM Projects\";
+        string BaseProjectPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal)+@"\EGM Projects\";
         string[] DebugProjects = new string[]{ 
             @"Platformer Template",  // 0
             @"Shooter Template",     // 1
