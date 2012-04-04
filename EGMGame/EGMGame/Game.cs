@@ -27,12 +27,12 @@ namespace EGMGame
         // <YOU MUST CHANGE PATHS>
         string BaseProjectPath = @"C:\Users\Muhammet\Documents\EGM Projects\";
         string[] DebugProjects = new string[]{ 
-            @"Platformer Template",
-            @"Shooter Template",
-            @"RPG Template",
-            @"RPG Tutorial",
-            @"Royal Playground",
-            @"Simple Shooter Sample"
+            @"Platformer Template",  // 0
+            @"Shooter Template",     // 1
+            @"RPG Template",         // 2
+            @"RPG Tutorial",         // 3
+            @"Royal Playground",     // 4
+            @"Simple Shooter Sample" // 5
         };
 #endif
 
@@ -58,7 +58,7 @@ namespace EGMGame
                 // Set the global content manager
                 Global.ContentManager = Content;
 #if VISUAL && WINDOWS
-                Content.RootDirectory = BaseProjectPath + DebugProjects[1] + @"\Content";
+                Content.RootDirectory = BaseProjectPath + DebugProjects[2] + @"\Content";
 #else
 				Content.RootDirectory = "Content";
 #endif
