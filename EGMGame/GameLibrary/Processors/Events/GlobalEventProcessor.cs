@@ -55,6 +55,7 @@ namespace EGMGame.Processors
         {
             data = eventData;
             id = data.ID;
+            UniqueID = Global.Instance.EventUniqueIDCount++;
         }
         #endregion
 

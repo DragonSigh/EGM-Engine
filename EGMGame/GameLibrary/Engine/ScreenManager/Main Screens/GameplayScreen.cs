@@ -223,19 +223,23 @@ namespace EGMGame
                     if (Global.Instance.CurrentMap != null)
                     {
                         // Update Global Process
-                        bool dontUpdate = false;
-                        for (int i = 0; i < Global.Instance.GlobalEvents.Count; i++)
+                        if (Global.Instance.AutorunID == -1)
                         {
-                            Global.Instance.GlobalEvents[i].Update(gameTime);
-
-                            if (Global.Instance.GlobalEvents[i].isProgramActive && Global.Instance.GlobalEvents[i].IsAutoRun)
+                            for (int i = 0; i < Global.Instance.GlobalEvents.Count; i++)
                             {
-                                dontUpdate = true;
-                                break;
+                                Global.Instance.GlobalEvents[i].Update(gameTime);
+
+                                if (Global.Instance.GlobalEvents[i].isProgramActive && Global.Instance.GlobalEvents[i].IsAutoRun)
+                                {
+                                    Global.Instance.AutorunID = Global.Instance.GlobalEvents[i].UniqueID;
+                                    break;
+                                }
+                                else
+                                    Global.Instance.AutorunID = -1;
                             }
                         }
-                        if (!dontUpdate) Global.Instance.CurrentMap.Update(gameTime);
-                        if (!dontUpdate) Global.Instance.Weather.Update(gameTime);
+                        Global.Instance.CurrentMap.Update(gameTime);
+                        Global.Instance.Weather.Update(gameTime);
                     }
                     // Update Physics                        
                     Global.World.Step(Math.Min((float)gameTime.ElapsedGameTime.TotalSeconds, (1f / 30f)));

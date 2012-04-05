@@ -1751,7 +1751,6 @@ namespace EGMGame.Components
                             result = true;
                         break;
                 }
-
                 if (result)
                     SetupBranch(eventProgramData);
                 else if (eventProgramData.Else)
