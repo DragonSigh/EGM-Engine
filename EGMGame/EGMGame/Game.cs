@@ -58,7 +58,7 @@ namespace EGMGame
                 // Set the global content manager
                 Global.ContentManager = Content;
 #if VISUAL && WINDOWS
-                Content.RootDirectory = BaseProjectPath + DebugProjects[2] + @"\Content";
+                Content.RootDirectory = BaseProjectPath + DebugProjects[0] + @"\Content";
 #else
 				Content.RootDirectory = "Content";
 #endif

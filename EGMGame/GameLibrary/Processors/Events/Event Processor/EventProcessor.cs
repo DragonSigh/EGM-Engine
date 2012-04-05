@@ -1253,30 +1253,33 @@ namespace EGMGame.Processors
         /// <param name="index"></param>
         private void ProcessPage(int index, GameTime gameTime)
         {
-            if ((Global.Instance.AutorunID > -1 && UniqueID == Global.Instance.AutorunID) || Global.Instance.AutorunID == -1)
+            // Process trigger if not active
+            if (!isProgramActive && !IsLocked()) ProcessProgramTriggers();
+            // Check waiting time
+            if (waitFrames <= 0)
             {
-                // Process trigger if not active
-                if (!isProgramActive) ProcessProgramTriggers();
-                // Check waiting time
-                if (waitFrames <= 0)
+                if (MovementProcessors.Count > 0)
                 {
-                    if (MovementProcessors.Count > 0)
+                    if (!IsLocked(MovementProcessors.Last().Owner))
                     {
                         MovementProcessors.Last().Update(gameTime);
                         if (MovementProcessors.Last().IsDone)
                             MovementProcessors.Remove(MovementProcessors.Last());
                     }
+                }
 
-                    if (ActiveMovementProcessor != null && actionTakingPlace == ActionType.MovementProgram)
+                if (ActiveMovementProcessor != null && actionTakingPlace == ActionType.MovementProgram && !IsLocked(ActiveMovementProcessor.Owner))
+                {
+                    if (ActiveMovementProcessor.IsDone)
                     {
-                        if (ActiveMovementProcessor.IsDone)
-                        {
-                            ActiveMovementProcessor = null;
-                            actionTakingPlace = ActionType.None;
-                            waitActionCompelition = false;
-                        }
+                        ActiveMovementProcessor = null;
+                        actionTakingPlace = ActionType.None;
+                        waitActionCompelition = false;
                     }
+                }
 
+                if (!IsLocked())
+                {
                     // Return if there is an action taking place and must be completed
                     if (!(actionTakingPlace != ActionType.None && waitActionCompelition))
                     {
@@ -1306,14 +1309,15 @@ namespace EGMGame.Processors
                         }
                     }
                 }
-                // Update Movement Animation
-                UpdateMovement();
-                // Update Animation
-                Animation.Update(gameTime);
-                // Update Cursor
-                if (data.Pages[pageIndex].Cursor > -1 && this.Contains(new Vector2((float)Mouse.GetState().X, (float)Mouse.GetState().Y)))
-                    Global.Instance.CursorMaterial = data.Pages[pageIndex].Cursor;
             }
+            // Update Movement Animation
+            UpdateMovement();
+            // Update Animation
+            Animation.Update(gameTime);
+            // Update Cursor
+            if (data.Pages[pageIndex].Cursor > -1 && this.Contains(new Vector2((float)Mouse.GetState().X, (float)Mouse.GetState().Y)))
+                Global.Instance.CursorMaterial = data.Pages[pageIndex].Cursor;
+
         }
         /// <summary>
         /// Check if the program is active for sure.
@@ -1338,6 +1342,23 @@ namespace EGMGame.Processors
             else
                 return true;
             return false;
+        }
+        /// <summary>
+        /// Check if all events are locked
+        /// </summary>
+        /// <returns></returns>
+        private bool IsLocked()
+        {
+            return !((Global.Instance.AutorunID > -1 && UniqueID == Global.Instance.AutorunID) || Global.Instance.AutorunID == -1);
+        }
+        /// <summary>
+        /// Check if all the events locked, return false if owner provided is event that locked all events.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <returns></returns>
+        private bool IsLocked(Drawable owner)
+        {
+            return !((Global.Instance.AutorunID > -1 && UniqueID == Global.Instance.AutorunID) || Global.Instance.AutorunID == -1 || Global.Instance.AutorunID == owner.UniqueID);
         }
         #endregion
 

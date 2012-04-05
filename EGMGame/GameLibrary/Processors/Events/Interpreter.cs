@@ -1722,8 +1722,6 @@ namespace EGMGame.Components
         /// <param name="eventProgramData"></param>
         public void CheckSwitchCondition(SwitchData switche, EventProgramData eventProgramData)
         {
-            if (eventProgramData.Name.Contains("Test"))
-                eventProgramData = eventProgramData;
             try
             {
                 bool result = false;
